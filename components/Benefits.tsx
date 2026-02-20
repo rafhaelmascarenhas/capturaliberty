@@ -1,27 +1,70 @@
 import React from 'react';
 import { BENEFITS } from '../constants';
+import { motion } from 'framer-motion';
 
 const Benefits: React.FC = () => {
+  // Animation Variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
   return (
     <section id="features" className="py-24 bg-black relative border-t border-zinc-900">
       <div className="container max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-          <div className="max-w-2xl">
+          <motion.div 
+            className="max-w-2xl"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
             <h2 className="text-3xl md:text-5xl font-sans font-bold text-white mb-6 uppercase tracking-tight leading-none">
-              PADRÃO DE <br/> <span className="text-zinc-500">EXCELÊNCIA</span>
+              POR QUE ESCOLHER <br/> <span className="text-zinc-500">A LIBERTY</span>
             </h2>
             <p className="text-zinc-400 text-lg font-light leading-relaxed max-w-xl">
-              Nossa produção é focada na qualidade, não na quantidade. Cada par é resultado de um processo rigoroso de design e engenharia para entregar o máximo em conforto e estilo atemporal.
+              Focamos na qualidade, não na quantidade. Cada par é criado para oferecer estilo e conforto sem abrir mão da durabilidade.
             </p>
-          </div>
+          </motion.div>
+          
           {/* Decorative element */}
-          <div className="hidden md:block w-32 h-px bg-gradient-to-r from-zinc-800 to-transparent"></div>
+          <motion.div 
+             className="hidden md:block w-32 h-px bg-gradient-to-r from-zinc-800 to-transparent"
+             initial={{ scaleX: 0 }}
+             whileInView={{ scaleX: 1 }}
+             viewport={{ once: true }}
+             transition={{ duration: 1, delay: 0.5 }}
+             style={{ originX: 0 }}
+          ></motion.div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <motion.div 
+          className="grid md:grid-cols-3 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
           {BENEFITS.map((benefit) => (
-            <div 
+            <motion.div 
               key={benefit.id} 
+              variants={cardVariants}
               className="bg-zinc-900/30 p-8 rounded-2xl border border-zinc-800 hover:border-zinc-600 hover:bg-zinc-900 transition-all duration-500 group relative overflow-hidden"
             >
               {/* Hover Glow Effect */}
@@ -38,9 +81,9 @@ const Benefits: React.FC = () => {
               <p className="text-zinc-500 leading-relaxed text-sm font-normal group-hover:text-zinc-300 transition-colors duration-300 relative z-10">
                 {benefit.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

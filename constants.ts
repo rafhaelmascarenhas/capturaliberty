@@ -7,7 +7,7 @@ export const PRODUCTS: Product[] = [
     colorway: 'Ivory',
     price: 1299, // Preço placeholder
     originalPrice: 0,
-    imageUrl: 'https://via.placeholder.com/600x600?text=On+Cloudtilt', // Placeholder para imagem futura
+    imageUrl: 'https://via.placeholder.com/600x600?text=On+Cloudtilt', 
     badges: ['NOVO', 'TRENDING'],
   },
   {
@@ -16,7 +16,7 @@ export const PRODUCTS: Product[] = [
     colorway: 'All Black',
     price: 1899, // Preço placeholder
     originalPrice: 0,
-    imageUrl: 'https://via.placeholder.com/600x600?text=Nike+Alphafly+3', // Placeholder para imagem futura
+    imageUrl: 'https://via.placeholder.com/600x600?text=Nike+Alphafly+3', 
     badges: ['PERFORMANCE', 'LIMITADO'],
   },
   {
@@ -25,7 +25,7 @@ export const PRODUCTS: Product[] = [
     colorway: 'Bone Sparrow',
     price: 1199, // Preço placeholder
     originalPrice: 0,
-    imageUrl: 'https://via.placeholder.com/600x600?text=NB+9060', // Placeholder para imagem futura
+    imageUrl: 'https://via.placeholder.com/600x600?text=NB+9060', 
     badges: ['STREETWEAR', 'BESTSELLER'],
   },
 ];
@@ -33,21 +33,21 @@ export const PRODUCTS: Product[] = [
 export const BENEFITS: Benefit[] = [
   {
     id: '1',
-    icon: 'fa-cube',
-    title: 'ENGENHARIA DE PRECISÃO',
-    description: 'Desenvolvidos com materiais de alta resistência e acabamento rigoroso para garantir durabilidade superior.',
+    icon: 'fa-check-circle', // Ícone mais amigável
+    title: 'QUALIDADE SUPERIOR',
+    description: 'Materiais selecionados e acabamento impecável para garantir durabilidade e estilo.',
   },
   {
     id: '2',
-    icon: 'fa-feather-alt',
-    title: 'CONFORTO DURADOURO',
-    description: 'Design ergonômico e sistema de amortecimento projetado para oferecer suporte contínuo durante todo o dia.',
+    icon: 'fa-shoe-prints', // Ícone mais direto
+    title: 'CONFORTO DIÁRIO',
+    description: 'Desenvolvido para oferecer o suporte ideal, perfeito para acompanhar o seu ritmo.',
   },
   {
     id: '3',
-    icon: 'fa-lock',
-    title: 'DISPONIBILIDADE CONTROLADA',
-    description: 'Lotes produzidos em quantidades limitadas para assegurar o máximo padrão de qualidade em cada par.',
+    icon: 'fa-star', // Ícone de exclusividade
+    title: 'EDIÇÃO LIMITADA',
+    description: 'Modelos produzidos em pequenas quantidades, garantindo exclusividade para quem usa.',
   },
 ];
 

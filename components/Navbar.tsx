@@ -23,52 +23,56 @@ const Navbar: React.FC = () => {
   return (
     <>
       <motion.nav
-        className={`fixed z-50 left-0 transition-all duration-300 ease-in-out ${
+        className={`fixed z-50 left-0 transition-all duration-300 ease-out will-change-transform ${
           scrolled
-            ? 'top-4 w-full flex justify-center'
+            ? 'top-4 w-full flex justify-center pointer-events-none' // pointer-events-none no container para não bloquear cliques laterais
             : 'top-0 w-full'
         }`}
-        initial={{ y: -100, opacity: 0 }}
+        initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.6 }}
       >
-        <div className={`flex justify-between items-center transition-all duration-300 ${
+        <div className={`flex justify-between items-center transition-all duration-300 pointer-events-auto ${
           scrolled
-            ? 'bg-black/80 backdrop-blur-md border border-zinc-800 rounded-full py-3 px-6 shadow-2xl w-[95%] md:w-auto'
+            ? 'bg-black/90 backdrop-blur-md border border-zinc-800 rounded-full py-3 px-6 shadow-2xl w-[95%] md:w-auto'
             : 'container max-w-6xl mx-auto px-6 py-6 w-full'
         }`}>
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="#" className="group relative z-50">
+            <a href="#" className="group relative z-50 block">
               <h1 className="text-xl md:text-2xl font-black tracking-tighter text-white select-none">
                 LIBERTY<span className="font-thin text-zinc-500">.SNK</span>
               </h1>
             </a>
           </div>
 
-          {/* Spacer - Only on Desktop Scrolled */}
-          {scrolled && <div className="hidden md:block w-16"></div>}
+          {/* Spacer - Only on Desktop Scrolled to balance layout */}
+          {scrolled && <div className="hidden md:block w-4"></div>}
 
           {/* Desktop Actions */}
-          <div className="hidden md:flex items-center gap-6 flex-shrink-0">
+          <div className="hidden md:flex items-center gap-4 flex-shrink-0">
             <button 
                 onClick={() => setShowCoupon(true)}
-                className="text-xs font-bold uppercase tracking-widest text-zinc-300 hover:text-white transition-colors relative group"
+                className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-zinc-300 hover:text-white transition-colors border border-transparent hover:border-zinc-700 rounded-full px-4 py-2.5"
             >
-                CONVITE ESPECIAL
+                <i className="fa-solid fa-tag text-xs"></i>
+                <span>10% OFF</span>
             </button>
 
             <a
               href="#hero-form"
-              className="text-[10px] font-black uppercase tracking-[0.15em] px-5 py-2.5 rounded-full transition-all border bg-white text-black border-white hover:bg-zinc-200 shadow-md"
+              className="text-[11px] font-black uppercase tracking-[0.15em] px-6 py-2.5 rounded-full transition-all border bg-white text-black border-white hover:bg-zinc-200 shadow-md hover:shadow-lg hover:scale-105 active:scale-95"
             >
-              LISTA DE ESPERA
+              QUERO SER AVISADO
             </a>
           </div>
 
-          {/* Mobile Menu Icon */}
+          {/* Mobile Menu Icon - AUMENTADO E COM ÍCONE */}
           <button className="md:hidden text-white p-2 flex-shrink-0" onClick={() => setShowCoupon(true)}>
-             <span className="text-[10px] font-bold uppercase text-zinc-300 tracking-widest border border-zinc-700 px-3 py-1 rounded-full">CONVITE</span>
+             <span className="text-xs font-bold uppercase text-white tracking-widest border border-zinc-700 px-4 py-2 rounded-full bg-zinc-900/80 shadow-lg active:scale-95 transition-transform flex items-center gap-2">
+               <i className="fa-solid fa-tag text-[10px] text-zinc-400"></i>
+               10% OFF
+             </span>
           </button>
         </div>
       </motion.nav>
@@ -84,15 +88,15 @@ const Navbar: React.FC = () => {
             onClick={() => setShowCoupon(false)}
           >
             <motion.div
-              initial={{ scale: 0.9, y: 20 }}
-              animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.9, y: 20 }}
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
               className="bg-zinc-900 border border-zinc-700 p-8 rounded-2xl shadow-2xl max-w-sm w-full text-center relative overflow-hidden"
             >
               <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
-              <h3 className="text-xl font-bold text-white mb-2 uppercase tracking-wide">CONVITE DE BOAS-VINDAS</h3>
-              <p className="text-zinc-400 text-sm mb-6">Como cortesia pelo seu interesse, oferecemos um benefício especial para sua primeira aquisição.</p>
+              <h3 className="text-xl font-bold text-white mb-2 uppercase tracking-wide">SEU CUPOM DE DESCONTO</h3>
+              <p className="text-zinc-400 text-sm mb-6">Use este código na sua primeira compra em nosso site para garantir 10% OFF.</p>
               <div 
                 className="bg-black border border-zinc-800 rounded-lg p-4 mb-6 cursor-pointer group relative hover:border-zinc-600 transition-colors"
                 onClick={copyToClipboard}
