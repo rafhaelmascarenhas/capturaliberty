@@ -1,36 +1,53 @@
 import { Benefit, Product, Testimonial } from './types';
 
-// Products data is currently unused in the short version, but kept for type consistency if needed later.
 export const PRODUCTS: Product[] = [
   {
     id: '1',
-    name: 'Air Jordan 1 High OG',
-    colorway: 'Lost & Found',
-    price: 1299,
-    originalPrice: 1599,
-    imageUrl: 'https://picsum.photos/600/600?random=1',
-    badges: ['-20% OFF', 'MAIS VENDIDO'],
+    name: 'On Cloudtilt',
+    colorway: 'Ivory',
+    price: 1299, // Preço placeholder
+    originalPrice: 0,
+    imageUrl: 'https://via.placeholder.com/600x600?text=On+Cloudtilt', // Placeholder para imagem futura
+    badges: ['NOVO', 'TRENDING'],
+  },
+  {
+    id: '2',
+    name: 'Nike Air Zoom Alphafly 3',
+    colorway: 'All Black',
+    price: 1899, // Preço placeholder
+    originalPrice: 0,
+    imageUrl: 'https://via.placeholder.com/600x600?text=Nike+Alphafly+3', // Placeholder para imagem futura
+    badges: ['PERFORMANCE', 'LIMITADO'],
+  },
+  {
+    id: '3',
+    name: 'New Balance 9060',
+    colorway: 'Bone Sparrow',
+    price: 1199, // Preço placeholder
+    originalPrice: 0,
+    imageUrl: 'https://via.placeholder.com/600x600?text=NB+9060', // Placeholder para imagem futura
+    badges: ['STREETWEAR', 'BESTSELLER'],
   },
 ];
 
 export const BENEFITS: Benefit[] = [
   {
     id: '1',
-    icon: 'fa-wind',
-    title: 'Tecnologia Respirável',
-    description: 'Malha de engenharia avançada que mantém seus pés frescos, seja na corrida ou no dia a dia.',
+    icon: 'fa-cube',
+    title: 'ENGENHARIA DE PRECISÃO',
+    description: 'Desenvolvidos com materiais de alta resistência e acabamento rigoroso para garantir durabilidade superior.',
   },
   {
     id: '2',
-    icon: 'fa-shoe-prints',
-    title: 'Amortecimento Max',
-    description: 'Espuma de alta densidade projetada para absorver impacto e retornar energia a cada passo.',
+    icon: 'fa-feather-alt',
+    title: 'CONFORTO DURADOURO',
+    description: 'Design ergonômico e sistema de amortecimento projetado para oferecer suporte contínuo durante todo o dia.',
   },
   {
     id: '3',
-    icon: 'fa-unlock-alt',
-    title: 'Acesso Antecipado',
-    description: 'Membros da lista VIP garantem os lançamentos antes do público geral e preços exclusivos.',
+    icon: 'fa-lock',
+    title: 'DISPONIBILIDADE CONTROLADA',
+    description: 'Lotes produzidos em quantidades limitadas para assegurar o máximo padrão de qualidade em cada par.',
   },
 ];
 

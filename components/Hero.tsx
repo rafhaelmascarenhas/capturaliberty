@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { BeamsBackground } from './ui/beams-background';
 
 const Hero: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -9,9 +11,8 @@ const Hero: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
-    // Simulate API call
     setTimeout(() => {
-      alert('Bem-vindo à lista VIP!');
+      alert('Sua solicitação de acesso prioritário foi recebida.');
       setSubmitted(false);
       setEmail('');
       setName('');
@@ -20,115 +21,95 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-gradient-to-b from-gray-200 via-gray-100 to-white">
-      {/* Background Ambience */}
-      <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white via-gray-100 to-transparent opacity-60 pointer-events-none" />
+    <BeamsBackground className="flex items-center pt-20 pb-8 md:pt-24 md:pb-12 overflow-hidden bg-black text-white" intensity="strong">
       
-      <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
-        
-        {/* Left Column: Copy & Form */}
-        <div className="space-y-8 animate-[fadeIn_1s_ease-out]">
-          <div>
-            <span className="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-widest text-gray-600 border border-gray-300 rounded-full bg-white uppercase">
-              Tecnologia & Conforto
-            </span>
-            <h1 className="text-5xl md:text-7xl font-sans font-bold text-gray-900 leading-[0.95] tracking-tight mb-4">
-              CONHEÇA O SEU <br />
-              <span className="text-gray-500">MAXIMUN DIÁRIO</span>
-            </h1>
-            <p className="text-gray-600 text-lg md:text-xl max-w-md font-light">
-              Mergulhe em uma experiência de conforto duradouro com malha respirável e amortecimento Air Max.
-            </p>
-          </div>
+      {/* O Background Glow manual foi removido em favor do BeamsBackground */}
 
-          {/* Clean Light Form */}
-          <div className="bg-white border border-gray-200 p-6 md:p-8 rounded-2xl shadow-xl relative overflow-hidden max-w-md">
-            <div className="relative z-10">
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Garanta Acesso Antecipado
-              </h3>
-              <p className="text-sm text-gray-500 mb-6">Cadastre-se para receber novidades e descontos exclusivos.</p>
-              
-              <form onSubmit={handleSubmit} className="space-y-3">
-                <div>
-                  <label className="text-xs font-bold text-gray-700 uppercase ml-1">Nome Completo</label>
-                  <input
-                    type="text"
-                    required
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:border-gray-400 focus:bg-white transition-all text-sm mt-1"
-                  />
-                </div>
-                <div>
-                  <label className="text-xs font-bold text-gray-700 uppercase ml-1">Telefone / WhatsApp</label>
-                  <input
-                    type="tel"
-                    required
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:border-gray-400 focus:bg-white transition-all text-sm mt-1"
-                  />
-                </div>
-                <div>
-                  <label className="text-xs font-bold text-gray-700 uppercase ml-1">E-mail</label>
-                  <input
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:border-gray-400 focus:bg-white transition-all text-sm mt-1"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  disabled={submitted}
-                  className="w-full bg-black hover:bg-gray-800 text-white font-bold uppercase tracking-wide py-4 rounded-lg shadow-lg transition-all duration-300 transform active:scale-[0.98] text-sm mt-4"
-                >
-                  {submitted ? (
-                    <span className="animate-pulse">Enviando...</span>
-                  ) : (
-                    <>
-                      Entrar na Lista VIP
-                    </>
-                  )}
-                </button>
-              </form>
-            </div>
-          </div>
+      <div className="container max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-y-4 lg:gap-x-12 items-center relative z-10">
+        
+        {/* 1. Copy Premium e Segura */}
+        <div className="lg:col-start-1 lg:row-start-1 text-center lg:text-left mb-2 lg:mb-0">
+          <h1 className="text-4xl md:text-5xl xl:text-6xl font-sans font-bold leading-[1.05] tracking-tight mb-4 drop-shadow-2xl">
+            GARANTA ACESSO <br />
+            PRIORITÁRIO À <br />
+            <span className="text-zinc-400">PRÓXIMA COLEÇÃO.</span>
+          </h1>
+          <p className="text-zinc-300 text-base md:text-lg max-w-md mx-auto lg:mx-0 font-light leading-relaxed drop-shadow-md">
+            Cadastre-se para receber notificações antecipadas sobre lançamentos limitados e assegure sua oportunidade de compra antes da abertura oficial.
+          </p>
         </div>
 
-        {/* Right Column: Visual */}
-        <div className="relative flex justify-center items-center lg:h-[600px]">
-          {/* Subtle Circle Decoration */}
-          <div className="absolute w-[350px] h-[350px] bg-gray-300 rounded-full blur-[80px] opacity-40 mix-blend-multiply" />
-          
-          {/* Hero Image */}
-          <div className="relative z-10 w-full max-w-[600px] animate-float">
+        {/* 2. Sneaker Visual */}
+        <div className="relative flex justify-center items-center h-[280px] md:h-[400px] lg:h-full lg:col-start-2 lg:row-start-1 lg:row-span-2 -my-4 lg:my-0 pointer-events-none">
+          <motion.div
+            className="relative z-10 w-full max-w-[320px] md:max-w-[450px] lg:max-w-[650px]"
+            animate={{ y: [0, -15, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          >
              <img 
-                src="https://picsum.photos/800/800?random=101" 
-                alt="Tênis Performance" 
-                className="w-full h-full object-cover rounded-3xl shadow-2xl"
-                style={{ clipPath: "polygon(10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%)" }} 
+                src="/tenislibertyhero.webp"
+                alt="Liberty One Edition"
+                className="w-full h-full object-contain drop-shadow-2xl"
              />
-             
-             {/* Floating Info Card */}
-             <div className="absolute bottom-10 -right-4 bg-white/80 backdrop-blur-md p-4 rounded-xl shadow-lg border border-white/40 hidden md:block">
-                <div className="flex items-center gap-3">
-                   <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center">
-                      <i className="fa-solid fa-play text-xs"></i>
-                   </div>
-                   <div>
-                      <p className="text-xs font-bold text-gray-900">Everyday Fit</p>
-                      <p className="text-[10px] text-gray-500">Tecnologia de adaptação</p>
-                   </div>
+          </motion.div>
+        </div>
+        
+        {/* 3. Form - "Lista de Espera" Vibe */}
+        <div className="lg:col-start-1 lg:row-start-2 relative z-20">
+            <div className="bg-zinc-900/80 backdrop-blur-md border border-zinc-700/50 p-6 md:p-8 rounded-2xl shadow-[0_0_40px_-10px_rgba(255,255,255,0.1)] max-w-md mx-auto lg:mx-0 mt-2 lg:mt-8 relative overflow-hidden group">
+                <div className="absolute inset-0 border border-white/5 rounded-2xl pointer-events-none group-hover:border-white/10 transition-colors duration-500"></div>
+
+                <h3 className="text-lg font-bold text-white mb-1 relative z-10 uppercase tracking-wide">
+                  Lista de Espera Oficial
+                </h3>
+                <p className="text-xs text-zinc-400 mb-5 relative z-10">
+                  Devido à produção controlada, as vagas para a pré-venda são limitadas. Preencha seus dados para solicitar inclusão.
+                </p>
+                
+                <form onSubmit={handleSubmit} className="space-y-3 relative z-10">
+                <div className="space-y-3">
+                    <input
+                      type="text"
+                      required
+                      value={name}
+                      placeholder="SEU NOME COMPLETO"
+                      onChange={(e) => setName(e.target.value)}
+                      className="w-full bg-black/70 border border-zinc-800 rounded-lg px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-zinc-500 transition-all text-xs font-medium tracking-wide shadow-inner backdrop-blur-sm"
+                    />
+                    <input
+                      type="tel"
+                      required
+                      value={phone}
+                      placeholder="SEU WHATSAPP"
+                      onChange={(e) => setPhone(e.target.value)}
+                      className="w-full bg-black/70 border border-zinc-800 rounded-lg px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-zinc-500 transition-all text-xs font-medium tracking-wide shadow-inner backdrop-blur-sm"
+                    />
+                    <input
+                      type="email"
+                      required
+                      value={email}
+                      placeholder="SEU MELHOR E-MAIL"
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="w-full bg-black/70 border border-zinc-800 rounded-lg px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-zinc-500 transition-all text-xs font-medium tracking-wide shadow-inner backdrop-blur-sm"
+                    />
                 </div>
-             </div>
-          </div>
+                <button
+                    type="submit"
+                    disabled={submitted}
+                    className="w-full bg-white hover:bg-zinc-200 text-black font-black uppercase tracking-widest py-4 rounded-lg shadow-lg transition-all duration-300 transform active:scale-[0.98] text-xs mt-2"
+                >
+                    {submitted ? (
+                    <span className="animate-pulse">SOLICITANDO...</span>
+                    ) : (
+                    'ENTRAR PARA LISTA VIP'
+                    )}
+                </button>
+                </form>
+            </div>
         </div>
 
       </div>
-    </section>
+    </BeamsBackground>
   );
 };
 

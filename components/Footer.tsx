@@ -2,58 +2,54 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-100 border-t border-gray-200 pt-16 pb-8 text-gray-800">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-                <h2 className="text-2xl font-bold uppercase tracking-tight mb-4 text-gray-900">Mantenha-se Atualizado</h2>
-                <p className="text-gray-500 mb-6 font-light">Não perca a oportunidade de estar à frente. Receba novidades no seu e-mail.</p>
-                <div className="flex max-w-md bg-white border border-gray-300 rounded-lg p-1 shadow-sm">
-                    <input type="email" placeholder="Digite seu e-mail" className="flex-1 bg-transparent px-4 text-gray-900 placeholder-gray-400 focus:outline-none text-sm" />
-                    <button className="bg-black text-white px-6 py-3 rounded-md text-sm font-bold uppercase hover:bg-gray-800 transition-colors">Assinar</button>
+    <footer className="bg-black border-t border-zinc-900 pt-16 pb-12 text-zinc-400">
+      <div className="container max-w-6xl mx-auto px-6">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-12">
+            {/* Logo */}
+            <div className="flex-shrink-0">
+                <h1 className="text-4xl font-black italic tracking-tighter text-white select-none">
+                    LIBERTY<span className="font-thin text-zinc-600">.SNK</span>
+                </h1>
+                <p className="text-[10px] tracking-[0.3em] uppercase mt-2 text-zinc-600">Seu Parceiro Perfeito</p>
+            </div>
+
+            {/* Contact Info */}
+            <div className="flex flex-col md:flex-row gap-8 md:gap-16 text-center md:text-left">
+                <div>
+                    <h4 className="text-white font-bold mb-4 uppercase tracking-widest text-[10px] border-b border-zinc-800 pb-2 inline-block md:block">Contato</h4>
+                    <ul className="space-y-3 text-sm">
+                        <li className="flex items-center justify-center md:justify-start gap-3 group">
+                            <i className="fa-brands fa-whatsapp text-zinc-500 group-hover:text-green-500 transition-colors"></i>
+                            <a href="https://wa.me/5537998029530" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                                (37) 99802-9530
+                            </a>
+                        </li>
+                        <li className="flex items-center justify-center md:justify-start gap-3 group">
+                            <i className="fa-regular fa-envelope text-zinc-500 group-hover:text-blue-500 transition-colors"></i>
+                            <a href="mailto:sac.libertysneakers@gmail.com" className="hover:text-white transition-colors">
+                                sac.libertysneakers@gmail.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 className="text-white font-bold mb-4 uppercase tracking-widest text-[10px] border-b border-zinc-800 pb-2 inline-block md:block">Redes Sociais</h4>
+                    <ul className="space-y-3 text-sm">
+                        <li className="flex items-center justify-center md:justify-start gap-3 group">
+                            <i className="fa-brands fa-instagram text-zinc-500 group-hover:text-pink-500 transition-colors"></i>
+                            <a href="https://www.instagram.com/libertysnk" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                                @libertysnk
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div className="flex justify-end opacity-20">
-                <h1 className="text-8xl font-black italic tracking-tighter text-gray-400 select-none">LIBERTY</h1>
-            </div>
-        </div>
-
-        <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-start text-xs text-gray-500">
-          <div className="mb-6 md:mb-0">
-            <h3 className="text-gray-900 text-lg font-bold mb-1">LIBERTY<span className="font-light">.SNK</span></h3>
-            <p>SEU PARCEIRO PERFEITO</p>
-          </div>
-          
-          <div className="flex gap-12">
-            <div>
-                <h4 className="text-gray-900 font-bold mb-3 uppercase">Loja</h4>
-                <ul className="space-y-2">
-                    <li><a href="#" className="hover:text-black">Masculino</a></li>
-                    <li><a href="#" className="hover:text-black">Feminino</a></li>
-                    <li><a href="#" className="hover:text-black">Lançamentos</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 className="text-gray-900 font-bold mb-3 uppercase">Ajuda</h4>
-                <ul className="space-y-2">
-                    <li><a href="#" className="hover:text-black">Status do Pedido</a></li>
-                    <li><a href="#" className="hover:text-black">Frete & Entrega</a></li>
-                    <li><a href="#" className="hover:text-black">Devoluções</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 className="text-gray-900 font-bold mb-3 uppercase">Sobre</h4>
-                <ul className="space-y-2">
-                    <li><a href="#" className="hover:text-black">Nossa História</a></li>
-                    <li><a href="#" className="hover:text-black">Sustentabilidade</a></li>
-                    <li><a href="#" className="hover:text-black">Carreiras</a></li>
-                </ul>
-            </div>
-          </div>
         </div>
         
-        <div className="mt-12 text-center text-xs text-gray-400">
-             &copy; {new Date().getFullYear()} Liberty Sneakers. Todos os direitos reservados.
+        <div className="mt-16 pt-8 border-t border-zinc-900 text-center text-[10px] text-zinc-700 tracking-widest uppercase flex flex-col md:flex-row justify-between items-center gap-4">
+             <span>&copy; {new Date().getFullYear()} Liberty Sneakers. Todos os direitos reservados.</span>
+             <span className="opacity-50">Designed for Excellence</span>
         </div>
       </div>
     </footer>
