@@ -5,27 +5,27 @@ export const PRODUCTS: Product[] = [
     id: '1',
     name: 'On Cloudtilt',
     colorway: 'Ivory',
-    price: 1299, // Preço placeholder
+    price: 819,
     originalPrice: 0,
-    imageUrl: 'https://via.placeholder.com/600x600?text=On+Cloudtilt', 
+    imageUrl: '/oncloudtilt.webp', 
     badges: ['NOVO', 'TRENDING'],
   },
   {
     id: '2',
     name: 'Nike Air Zoom Alphafly 3',
     colorway: 'All Black',
-    price: 1899, // Preço placeholder
+    price: 899,
     originalPrice: 0,
-    imageUrl: 'https://via.placeholder.com/600x600?text=Nike+Alphafly+3', 
+    imageUrl: '/nike-air-zoom-alphafly-3-all-black.webp', 
     badges: ['PERFORMANCE', 'LIMITADO'],
   },
   {
     id: '3',
     name: 'New Balance 9060',
     colorway: 'Bone Sparrow',
-    price: 1199, // Preço placeholder
+    price: 799,
     originalPrice: 0,
-    imageUrl: 'https://via.placeholder.com/600x600?text=NB+9060', 
+    imageUrl: '/nb-bore-sparrow.webp', 
     badges: ['STREETWEAR', 'BESTSELLER'],
   },
 ];
@@ -33,19 +33,19 @@ export const PRODUCTS: Product[] = [
 export const BENEFITS: Benefit[] = [
   {
     id: '1',
-    icon: 'fa-check-circle', // Ícone mais amigável
+    icon: 'fa-check-circle',
     title: 'QUALIDADE SUPERIOR',
     description: 'Materiais selecionados e acabamento impecável para garantir durabilidade e estilo.',
   },
   {
     id: '2',
-    icon: 'fa-shoe-prints', // Ícone mais direto
+    icon: 'fa-shoe-prints',
     title: 'CONFORTO DIÁRIO',
     description: 'Desenvolvido para oferecer o suporte ideal, perfeito para acompanhar o seu ritmo.',
   },
   {
     id: '3',
-    icon: 'fa-star', // Ícone de exclusividade
+    icon: 'fa-star',
     title: 'EDIÇÃO LIMITADA',
     description: 'Modelos produzidos em pequenas quantidades, garantindo exclusividade para quem usa.',
   },

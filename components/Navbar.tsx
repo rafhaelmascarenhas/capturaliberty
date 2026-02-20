@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
       <motion.nav
         className={`fixed z-50 left-0 transition-all duration-300 ease-out will-change-transform ${
           scrolled
-            ? 'top-4 w-full flex justify-center pointer-events-none' // pointer-events-none no container para não bloquear cliques laterais
+            ? 'top-4 w-full flex justify-center pointer-events-none' 
             : 'top-0 w-full'
         }`}
         initial={{ y: -20, opacity: 0 }}
@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
       >
         <div className={`flex justify-between items-center transition-all duration-300 pointer-events-auto ${
           scrolled
-            ? 'bg-black/90 backdrop-blur-md border border-zinc-800 rounded-full py-3 px-6 shadow-2xl w-[95%] md:w-auto'
+            ? 'bg-black/90 backdrop-blur-md border border-zinc-800 rounded-full py-4 px-8 shadow-2xl w-[95%] md:w-[800px]' // Aumentado padding e largura base
             : 'container max-w-6xl mx-auto px-6 py-6 w-full'
         }`}>
           {/* Logo */}
