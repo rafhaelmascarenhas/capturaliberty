@@ -34,13 +34,13 @@ const Navbar: React.FC = () => {
       >
         <div className={`flex justify-between items-center transition-all duration-300 pointer-events-auto ${
           scrolled
-            ? 'bg-black/90 backdrop-blur-md border border-zinc-800 rounded-full py-4 px-8 shadow-2xl w-[95%] md:w-[800px]' // Aumentado padding e largura base
+            ? 'bg-black/90 backdrop-blur-md border border-zinc-800 rounded-full py-2 px-6 md:py-4 md:px-8 shadow-2xl w-[95%] md:w-[800px]' // Reduzido py-2 no mobile
             : 'container max-w-6xl mx-auto px-6 py-6 w-full'
         }`}>
           {/* Logo */}
           <div className="flex-shrink-0">
             <a href="#" className="group relative z-50 block">
-              <h1 className="text-xl md:text-2xl font-black tracking-tighter text-white select-none">
+              <h1 className="text-lg md:text-2xl font-black tracking-tighter text-white select-none">
                 LIBERTY<span className="font-thin text-zinc-500">.SNK</span>
               </h1>
             </a>
@@ -67,10 +67,10 @@ const Navbar: React.FC = () => {
             </a>
           </div>
 
-          {/* Mobile Menu Icon - AUMENTADO E COM ÍCONE */}
-          <button className="md:hidden text-white p-2 flex-shrink-0" onClick={() => setShowCoupon(true)}>
-             <span className="text-xs font-bold uppercase text-white tracking-widest border border-zinc-700 px-4 py-2 rounded-full bg-zinc-900/80 shadow-lg active:scale-95 transition-transform flex items-center gap-2">
-               <i className="fa-solid fa-tag text-[10px] text-zinc-400"></i>
+          {/* Mobile Menu Icon - Ajustado para ser mais compacto */}
+          <button className="md:hidden text-white p-1 flex-shrink-0" onClick={() => setShowCoupon(true)}>
+             <span className="text-[10px] font-bold uppercase text-white tracking-widest border border-zinc-700 px-3 py-1.5 rounded-full bg-zinc-900/80 shadow-lg active:scale-95 transition-transform flex items-center gap-2">
+               <i className="fa-solid fa-tag text-[9px] text-zinc-400"></i>
                10% OFF
              </span>
           </button>

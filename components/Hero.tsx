@@ -20,8 +20,8 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center pt-20 pb-8 md:pt-24 md:pb-12 overflow-hidden bg-black text-white">
-      {/* Background Otimizado (CSS Radial Gradient em vez de Blur pesado/Canvas) */}
+    <section className="relative min-h-screen flex items-center pt-36 pb-12 md:pt-24 md:pb-12 overflow-hidden bg-black text-white">
+      {/* Background Otimizado */}
       <div 
         className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40"
         style={{

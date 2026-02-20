@@ -16,7 +16,7 @@ export const PRODUCTS: Product[] = [
     colorway: 'All Black',
     price: 899,
     originalPrice: 0,
-    imageUrl: '/nike-air-zoom-alphafly-3-all-black.webp', 
+    imageUrl: '/nike-air-zoom alphafly-3allblack.webp', 
     badges: ['PERFORMANCE', 'LIMITADO'],
   },
   {
