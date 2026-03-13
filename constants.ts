@@ -9,6 +9,7 @@ export const PRODUCTS: Product[] = [
     originalPrice: 0,
     imageUrl: '/oncloudtilt.webp', 
     badges: ['NOVO', 'TRENDING'],
+    link: 'https://libertysnk.com/products/on-running-on-cloudtilt-ivory'
   },
   {
     id: '2',
@@ -18,6 +19,7 @@ export const PRODUCTS: Product[] = [
     originalPrice: 0,
     imageUrl: '/nike-air-zoom alphafly-3allblack.webp', 
     badges: ['PERFORMANCE', 'LIMITADO'],
+    link: 'https://libertysnk.com/products/nike-air-zoom-alphafly-3'
   },
   {
     id: '3',
@@ -27,6 +29,7 @@ export const PRODUCTS: Product[] = [
     originalPrice: 0,
     imageUrl: '/nb-bore-sparrow.webp', 
     badges: ['STREETWEAR', 'BESTSELLER'],
+    link: 'https://libertysnk.com/products/new-balance-9060-sea-salt-raincloud-pronta-entrega'
   },
 ];
 

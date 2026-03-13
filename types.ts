@@ -6,6 +6,7 @@ export interface Product {
   originalPrice: number;
   imageUrl: string;
   badges: string[];
+  link?: string;
 }
 
 export interface Testimonial {

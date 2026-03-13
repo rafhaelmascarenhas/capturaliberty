@@ -56,10 +56,13 @@ const ProductTeaser: React.FC = () => {
           viewport={{ once: true, margin: "-50px" }}
         >
           {PRODUCTS.map((product) => (
-            <motion.div 
+            <motion.a 
               key={product.id} 
+              href={product.link}
+              target="_blank"
+              rel="noopener noreferrer"
               variants={itemVariants}
-              className="group relative bg-zinc-900/40 rounded-3xl border border-zinc-800 hover:border-zinc-600 transition-all duration-500 overflow-hidden"
+              className="group relative bg-zinc-900/40 rounded-3xl border border-zinc-800 hover:border-zinc-600 transition-all duration-500 overflow-hidden block cursor-pointer"
             >
               {/* Image Container */}
               <div className="aspect-square bg-zinc-900 flex items-center justify-center p-8 relative overflow-hidden">
@@ -94,7 +97,7 @@ const ProductTeaser: React.FC = () => {
                     </button>
                  </div>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </motion.div>
       </div>
