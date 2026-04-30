@@ -80,6 +80,9 @@ const Hero: React.FC = () => {
         setName('');
         setPhone('');
         setEmail('');
+        
+        // Redireciona para o grupo do WhatsApp
+        window.location.href = 'https://chat.whatsapp.com/H7zEDgEFKfu2lOmFkXqiPB?mode=gi_t';
       } else {
         throw new Error('Erro na resposta do servidor');
       }
@@ -169,7 +172,7 @@ const Hero: React.FC = () => {
                       ACESSO GARANTIDO
                     </h3>
                     <p className="text-zinc-400 text-sm">
-                      Você receberá novidades em breve.
+                      Redirecionando para o grupo VIP...
                     </p>
                   </motion.div>
                 ) : (
